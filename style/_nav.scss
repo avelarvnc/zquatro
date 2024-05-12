@@ -1,0 +1,35 @@
+nav{
+    // height: 100vh;
+    // width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+
+    a{
+        text-decoration: none;
+        color: $content-primary;
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+}
+
+
+@media screen and (min-width: 480px) {
+nav
+{
+    height: auto;
+    width: 80%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 32px;
+
+}
+}

@@ -1,0 +1,20 @@
+.main-button
+{
+    background: $content-secondary;
+    color: $content-primary;
+    padding: 5%;
+    border-radius: 5px;
+    border: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    &:hover{
+        box-shadow: #c7b3003d 0px 3px 8px;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .main-button
+    {
+        padding: 1%;
+    }
+}
