@@ -1,16 +1,28 @@
 @import './var';
+@import './text';
+@import './input';
 @import './header';
 @import './nav';
 @import './banner';
-@import './button';
-@import './text';
+@import './card';
+
+
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: $bg-primary;
     font-family: $font-primary;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body
+{
+    background: $bg-primary;
+
 }
 
 
@@ -41,6 +53,37 @@
 
 }
 
+#modalidades, #planos
+{
+    padding: 2%;
+}
+
+#info
+{
+    background: $content-primary;
+    color: $content-secondary;
+    padding: 2%;
+    text-align: center;
+}
+
+footer
+{
+    background: $content-secondary;
+    color: $content-primary;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 1%;
+
+    a
+    {
+        color: $content-primary;
+        font-weight: 500;
+    }
+}
+
 @media screen and (min-width: 480px) {
     #about{
         display: flex;
@@ -51,6 +94,13 @@
         width: 100%;
         height: 100%;     
         }
+    }
+
+    footer
+    {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
 }
 
