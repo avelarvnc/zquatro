@@ -11,7 +11,7 @@ h1 {
 
 h2 {
   font-size: 2.4rem;
-  margin-bottom: 2%;
+  margin: 2% 0;
 }
 
 h3 {
@@ -21,6 +21,10 @@ h3 {
 
 h4 {
   font-size: 1.8rem;
+}
+
+li {
+  font-size: 1.2rem;
 }
 
 .main-button {
@@ -37,22 +41,29 @@ h4 {
 }
 
 input {
-  padding: 1%;
-  width: 20%;
   border-radius: 5px;
-  border: none;
+  width: 100%;
+  padding: 4%;
+  font-size: 1.2rem;
 }
 
 input[type=submit] {
-  width: 10%;
+  width: 80%;
   background: #DCCA26;
-  color: #000;
-  font-weight: 700;
+  border: none;
+  font-size: 1.4rem;
 }
 
 @media screen and (min-width: 480px) {
   .main-button {
     padding: 1%;
+  }
+  input {
+    padding: 1%;
+    width: 20%;
+  }
+  input[type=submit] {
+    width: 10%;
   }
 }
 header {
@@ -66,10 +77,14 @@ header {
 }
 
 nav {
+  height: 100vh;
+  width: 100vw;
   position: absolute;
   top: 0;
   left: 0;
-  display: flex;
+  z-index: 9;
+  background: #EAEAEA;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -80,6 +95,29 @@ nav a {
   color: #000;
   font-weight: 700;
   font-size: 1.2rem;
+}
+
+#menu-button {
+  display: inline;
+}
+
+#mobile-options {
+  width: 100%;
+  padding: 4%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  margin-bottom: 2%;
+  border-bottom: 1px #DCCA26 solid;
+}
+
+.nav-buttons {
+  background: transparent;
+  border: 0;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 @media screen and (min-width: 480px) {
@@ -93,6 +131,12 @@ nav a {
     justify-content: flex-end;
     gap: 32px;
   }
+  #menu-button {
+    display: none;
+  }
+  #mobile-options {
+    display: none;
+  }
 }
 #main-banner {
   width: 98%;
@@ -104,8 +148,11 @@ nav a {
 }
 #main-banner img {
   width: 100%;
+  max-width: 100%;
   height: 50vh;
   border-radius: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #carousel-banner {
@@ -127,8 +174,11 @@ nav a {
 }
 #carousel-banner .carousel img {
   width: 100%;
+  max-width: 100%;
   height: 50vh;
   border-radius: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #carousel-banner .carousel .spinner {
   background-color: #EAEAEA;
@@ -174,9 +224,9 @@ nav a {
 }
 
 .card-plano {
-  width: 33%;
-  margin: 0 1%;
-  padding: 2%;
+  width: 100%;
+  margin: 2% 1%;
+  padding: 4% 2%;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 20px;
 }
@@ -204,10 +254,15 @@ nav a {
 }
 
 .card-info {
-  width: 33%;
-  margin: 0 1%;
-  height: 300px;
+  width: 100%;
+  margin: 8% 1%;
+  height: -moz-fit-content;
+  height: fit-content;
   padding: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .card-info h3 {
   margin-bottom: 10%;
@@ -219,13 +274,27 @@ nav a {
   height: 36px;
   width: 36px;
   margin: 0 32px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @media screen and (min-width: 480px) {
   .card-container {
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .card-plano {
+    width: 33%;
+    margin: 0% 1%;
+    padding: 2%;
+  }
+  .card-info {
+    width: 33%;
+    margin: 0 1%;
+    height: 300px;
+    padding: 2%;
+    justify-content: flex-start;
   }
 }
 * {
@@ -275,6 +344,16 @@ body {
   text-align: center;
 }
 
+.contact-form {
+  margin: 8% 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 32px;
+}
+
 footer {
   background: #DCCA26;
   color: #000;
@@ -290,6 +369,20 @@ footer a {
   font-weight: 500;
 }
 
+.hidden {
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateX(-60%);
+  transition: all 2s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+  transition: all 2s;
+}
+
 @media screen and (min-width: 480px) {
   #about {
     display: flex;
@@ -298,6 +391,11 @@ footer a {
   #about img {
     width: 100%;
     height: 100%;
+  }
+  .contact-form {
+    margin: 2% 0;
+    display: inline;
+    width: 100%;
   }
   footer {
     flex-direction: row;

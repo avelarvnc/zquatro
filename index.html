@@ -5,15 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZQuatro</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/main.css">
 </head>
 <body>
     <header>
         <h1>ZQuatro</h1>
 
-        <nav>
+        <button id="menu-button" class="nav-buttons" onclick="navControl();">&#9776;</button>
+        <nav id="nav-menu">
+            <div id="mobile-options">
+                <span>ZQuatro</span>
+                <button id="close-button" class="nav-buttons" onclick="navControl();">&#x2715;</button>
+            </div>
             <a href="index.html">Início</a>
             <a href="#carousel-banner">Nossa estrutura</a>
             <a href="#modalidades">Modalidades</a>
@@ -24,11 +29,19 @@
 
     <main>
 
-        <section id="main-banner">
-            <img src="/assets/images/mainbanner.png" alt="">
+        <section id="main-banner" class="hidden">
+            <picture>
+                <source media="(max-width:480px)" srcset="/assets/images/sala1.jpg">
+                <source media="(max-width: 2400px)" srcset="/assets/images/mainbanner.png">
+               <img src="/assets/images/mainbanner.png" alt="" loading="lazy">
+            </picture>
+            
+            
         </section>
 
-        <section id="about">
+        
+
+        <section id="about" class="hidden">
             <div class="content-column content-reduced">
                 <h2>Por que ser aluno da ZQuatro?</h2>
                 <p>Atendemos com excelência todos que desejam cuidar de sua saúde através da atividade física, contando com estrutura moderna, ambiente climatizado, equipe altamente qualificada e com planos ideias para o seu bolso.</p>
@@ -36,41 +49,41 @@
             </div>
 
             <div class="content-column center">
-                <img src="assets/images/mini-banner.jpg" alt="imagem">
+                <img src="assets/images/mini-banner.jpg" alt="imagem" >
             </div>
         </section>
 
-        <section id="carousel-banner">
+        <section id="carousel-banner" class="hidden">
             <h2>Estrutura de primeira linha para seus treinos</h2>
             <div class="carousel">
-                <img src="assets/images/sala1.jpg" alt="imagem">
+                <img src="assets/images/sala1.jpg" alt="imagem" loading="lazy">
                 <div class="spinner">
                     <span>< Sala de Spinning ></span>
                 </div>
             </div>           
         </section>
 
-        <section id="modalidades">
+        <section id="modalidades" class="hidden">
             <h2>Modalidades em destaque</h2>
             <div class="card-container">
                 <div class="card-modalidade">
-                    <img src="assets/images/modalidade1.jpg" alt="imagem">
+                    <img src="assets/images/modalidade1.jpg" alt="imagem" loading="lazy">
                     <h3>Condicionamento Físico</h3>
                 </div>
    
                 <div class="card-modalidade">
-                    <img src="assets/images/modalidade2.jpg" alt="imagem">
+                    <img src="assets/images/modalidade2.jpg" alt="imagem" loading="lazy">
                     <h3>Musculação</h3>
                 </div>
 
                 <div class="card-modalidade">
-                    <img src="assets/images/modalidade3.jpg" alt="imagem">
+                    <img src="assets/images/modalidade3.jpg" alt="imagem" loading="lazy">
                     <h3>Spinning</h3>
                 </div>
             </div>
         </section>
 
-        <section id="planos">
+        <section id="planos" class="hidden">
             <h2>Planos especiais</h2>
 
             <div class="card-container">
@@ -112,7 +125,7 @@
             </div>
         </section>
 
-        <section id="info">
+        <section id="info" class="hidden">
             <h2>Quer saber mais?</h2>
 
             <div class="card-container">
@@ -131,16 +144,18 @@
 
                 <div class="card-info">
                     <h3>Redes sociais</h3>
-                    <a href=""><img src="assets/images/instagram.svg" alt="instagram"></a>
-                    <a href=""><img src="assets/images/tiktok.svg" alt="tiktok"></a>
-                    <a href=""><img src="assets/images/facebook.svg" alt="facebook"></a>
+                    <div class="social">
+                        <a href=""><img src="assets/images/instagram.svg" alt="instagram"></a>
+                        <a href=""><img src="assets/images/tiktok.svg" alt="tiktok"></a>
+                        <a href=""><img src="assets/images/facebook.svg" alt="facebook"></a>
+                    </div>                    
                 </div>
             </div>   
             
             <div class="contact">
                 <h2>Cadastre-se para acompanhar as novidades da ZQuatro</h2>
 
-                <form action="">
+                <form class="contact-form" action="">
                     <input name="nome" type="text" placeholder="Insira seu nome" required>
                     <input name="fone" type="text" placeholder="Insira seu telefone" required>
                     <input name="email" type="email"  placeholder="Insira seu e-mail">
@@ -151,9 +166,11 @@
         </section>
     </main>
 
-    <footer>
+    <footer class="hidden">
         <span>© 2024 ZQuatro - Todos os direitos reservados</span>
         <a href="">Desenvolvido por Avelar</a>
     </footer>
+
+    <script src="assets/js/util.js"></script>
 </body>
 </html>

@@ -14,25 +14,34 @@
 
 input
 {
-    padding: 1%;
-    width: 20%;
     border-radius: 5px;
-    border: none;
+    width: 100%;
+    padding: 4%;
+    font-size: 1.2rem;
 }
-
 input[type="submit"]
 {
-    width: 10%;
+    width: 80%;
     background: $content-secondary;
-    color: $content-primary;
-    font-weight: 700;
-    
-
+    border: none;
+    font-size: 1.4rem;
 }
+
+
 
 @media screen and (min-width: 480px) {
     .main-button
     {
         padding: 1%;
     }
+
+    input{
+        padding: 1%;
+        width: 20%;
+    }
+    input[type="submit"]
+    {
+        width: 10%;
+    }
+    
 }
