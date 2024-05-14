@@ -145,6 +145,7 @@ nav a {
   border-radius: 20px;
   margin-bottom: 2%;
   height: 50vh;
+  display: none;
 }
 #main-banner img {
   width: 100%;
@@ -180,8 +181,9 @@ nav a {
   -o-object-fit: cover;
      object-fit: cover;
 }
-#carousel-banner .carousel .spinner {
+#carousel-banner .carousel .carousel-caption {
   background-color: #EAEAEA;
+  color: #000;
   font-size: 1.4rem;
   position: absolute;
   bottom: 0;
@@ -195,13 +197,20 @@ nav a {
   border-top-left-radius: 20px 20px;
   border-top-right-radius: 20px 20px;
 }
+#carousel-banner .carousel .carousel-control-prev-icon, #carousel-banner .carousel .carousel-control-next-icon {
+  width: 60px;
+  height: 60px;
+}
 
 @media screen and (min-width: 480px) {
-  .spinner {
+  #main-banner {
+    display: block;
+  }
+  .carousel-caption {
     width: 30% !important;
   }
 }
-.card-container {
+.card-container, .card-container-plano {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -229,6 +238,7 @@ nav a {
   padding: 4% 2%;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 20px;
+  text-align: center;
 }
 .card-plano h3, .card-plano h4, .card-plano ul {
   margin-bottom: 10%;
@@ -244,7 +254,7 @@ nav a {
 .card-especial {
   border: 1px solid #9F9F9F;
   background: #DCCA26;
-  padding: 4% 2%;
+  padding: 4% 2% !important;
 }
 .card-especial h3, .card-especial h4, .card-especial ul, .card-especial li {
   background: #DCCA26;
@@ -284,10 +294,18 @@ nav a {
     justify-content: space-between;
     align-items: flex-start;
   }
+  .card-container-plano {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
   .card-plano {
     width: 33%;
     margin: 0% 1%;
     padding: 2%;
+  }
+  .card-plano h3 {
+    font-weight: 700;
   }
   .card-info {
     width: 33%;
@@ -295,6 +313,10 @@ nav a {
     height: 300px;
     padding: 2%;
     justify-content: flex-start;
+  }
+  .card-info-border {
+    border-left: 1px solid #DCCA26;
+    border-right: 1px solid #DCCA26;
   }
 }
 * {
@@ -324,8 +346,8 @@ body {
   margin: 0 auto;
 }
 #about img {
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }

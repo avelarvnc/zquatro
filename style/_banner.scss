@@ -10,6 +10,7 @@
 {
     @include Banner();
     height: 50vh;
+    display: none;
 
     img{
         width: 100%;
@@ -43,9 +44,10 @@
             border-radius: 20px;
             object-fit: cover;
         }
-        .spinner
+        .carousel-caption
         {
             background-color: $bg-primary;
+            color: $content-primary;
             font-size: 1.4rem;
             position: absolute;
             bottom: 0;
@@ -60,12 +62,21 @@
             border-top-right-radius: 20px 20px;
 
         }
+        .carousel-control-prev-icon, .carousel-control-next-icon
+        {
+            width: 60px;
+            height: 60px;
+        }
        
     }
 }
 
 @media screen and (min-width: 480px) {
-    .spinner
+    #main-banner
+    {
+        display: block;
+    }
+    .carousel-caption
         {
             width: 30% !important;   
         }

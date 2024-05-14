@@ -5,8 +5,6 @@ function navControl()
     if (menu.style.display === "flex") {
         menu.style.display = "none";
       } else {
-        entry.target.classList.remove('hidden');
-        entry.target.classList.remove('show');
         menu.style.display = "flex";
       }
 }
@@ -18,6 +16,7 @@ const myObserver = new IntersectionObserver((entries) =>{
     if (entry.isIntersecting) {
       entry.target.classList.add('show')
     }
+    //o efeito ficou muito poluído com o trecho abaixo
     // else
     // {
     //   entry.target.classList.remove('show')

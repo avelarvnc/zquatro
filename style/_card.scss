@@ -1,4 +1,4 @@
-.card-container
+.card-container, .card-container-plano
 {
     display: flex;
     flex-direction: column;
@@ -22,6 +22,7 @@
     }
 }
 
+
 .card-plano
 {
     width: 100%;
@@ -29,6 +30,7 @@
     padding: 4% 2%;
     box-shadow: $shadow;
     border-radius: 20px;
+    text-align: center;
    
     h3, h4, ul
     {
@@ -49,7 +51,7 @@
 {
     border: 1px solid #9F9F9F;    
     background: $content-secondary;
-    padding: 4% 2%;
+    padding: 4% 2% !important;
 
     h3, h4, ul, li
     {
@@ -98,11 +100,22 @@
         align-items: flex-start;
     }
 
+    .card-container-plano
+    {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     .card-plano
     {
         width: 33%;
         margin: 0% 1%;
         padding: 2%;
+
+        h3{
+            font-weight: 700;
+        }
     }
 
     .card-info
@@ -112,5 +125,11 @@
         height: 300px;
         padding: 2%;
         justify-content: flex-start;
+    }
+
+    .card-info-border
+    {
+        border-left: 1px solid $content-secondary;
+        border-right: 1px solid $content-secondary;
     }
 }

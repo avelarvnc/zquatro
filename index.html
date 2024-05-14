@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style/main.css">
 </head>
 <body>
@@ -16,14 +18,14 @@
         <button id="menu-button" class="nav-buttons" onclick="navControl();">&#9776;</button>
         <nav id="nav-menu">
             <div id="mobile-options">
-                <span>ZQuatro</span>
+                <h1>ZQuatro</h1>
                 <button id="close-button" class="nav-buttons" onclick="navControl();">&#x2715;</button>
             </div>
-            <a href="index.html">Início</a>
-            <a href="#carousel-banner">Nossa estrutura</a>
-            <a href="#modalidades">Modalidades</a>
-            <a href="#planos">Planos</a>
-            <button class="main-button">Matricule-se</button>
+            <a href="index.html" onclick="navControl();">Início</a>
+            <a href="#carousel-banner" onclick="navControl();">Nossa estrutura</a>
+            <a href="#modalidades" onclick="navControl();">Modalidades</a>
+            <a href="#planos" onclick="navControl();">Planos</a>
+            <button class="main-button" onclick="navControl();">Matricule-se</button>
         </nav>
     </header>
 
@@ -31,7 +33,7 @@
 
         <section id="main-banner" class="hidden">
             <picture>
-                <source media="(max-width:480px)" srcset="/assets/images/sala1.jpg">
+                <source media="(max-width:480px)" srcset="/assets/images/mainbannerPequeno.png">
                 <source media="(max-width: 2400px)" srcset="/assets/images/mainbanner.png">
                <img src="/assets/images/mainbanner.png" alt="" loading="lazy">
             </picture>
@@ -49,18 +51,41 @@
             </div>
 
             <div class="content-column center">
-                <img src="assets/images/mini-banner.jpg" alt="imagem" >
+                <img class="images" src="assets/images/mini-banner.jpg" alt="imagem" >
             </div>
         </section>
 
         <section id="carousel-banner" class="hidden">
             <h2>Estrutura de primeira linha para seus treinos</h2>
-            <div class="carousel">
-                <img src="assets/images/sala1.jpg" alt="imagem" loading="lazy">
-                <div class="spinner">
-                    <span>< Sala de Spinning ></span>
+            <div id="carouselExampleCaptions" class="carousel slide">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 </div>
-            </div>           
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="assets/images/sala1.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Sala de Spinning</h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/images/sala2.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Sala de Musculação</h5>
+                    </div>
+                  </div>          
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Próximo</span>
+                </button>
+              </div>
+        
         </section>
 
         <section id="modalidades" class="hidden">
@@ -86,7 +111,7 @@
         <section id="planos" class="hidden">
             <h2>Planos especiais</h2>
 
-            <div class="card-container">
+            <div class="card-container-plano">
                 <div class="card-plano">
                     <h3>Mensal</h3>
                     <h4>R$ 169,99/mês</h4>
@@ -136,7 +161,7 @@
                     <p>CEP: 11050-030</p>
                 </div>
 
-                <div class="card-info">
+                <div class="card-info card-info-border">
                     <h3>Horários de funcionamento</h3>
                     <p>Segunda á Sexta-feira: 6h às 23h</p>
                     <p>Sábado e feriados: 8h às 14h</p>
@@ -169,8 +194,7 @@
     <footer class="hidden">
         <span>© 2024 ZQuatro - Todos os direitos reservados</span>
         <a href="">Desenvolvido por Avelar</a>
-    </footer>
-
-    <script src="assets/js/util.js"></script>
+    </footer>    
 </body>
+<script src="assets/js/util.js"></script>
 </html>
